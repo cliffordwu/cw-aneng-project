@@ -111,6 +111,7 @@ class Run:
     max_hp: int
     removes: [str]
     character: str
+    ascension_level: int
 
     @classmethod
     def from_dict(cls, d):
@@ -140,4 +141,5 @@ class Run:
             max_hp=d["max_hp_per_floor"][-1],
             removes=normalize_cards(d["items_purged"]),
             character=d["character_chosen"],
+            ascension_level=d["ascension_level"],
         )

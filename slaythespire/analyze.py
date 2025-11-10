@@ -56,7 +56,8 @@ class Stats:
             for file in files:
                 data = json.loads(Path(root, file).read_text())
                 run = Run.from_dict(data)
-                runs.append(run)
+                if run.ascension_level == 20:
+                    runs.append(run)
         return cls(runs)
 
     def __init__(self, runs: [Run]):
